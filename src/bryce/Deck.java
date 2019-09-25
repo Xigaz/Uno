@@ -48,10 +48,14 @@ public class Deck
         //Create Cards for all 8 Skip ActionCards
         for(int j = 0; j < 2; j++)
         {
-            deck.add(new Card(String.valueOf('\u26DE'), Colors.BLUE, Actions.SKIP));
-            deck.add(new Card(String.valueOf('\u26DE'), Colors.RED, Actions.SKIP));
-            deck.add(new Card(String.valueOf('\u26DE'), Colors.GREEN, Actions.SKIP));
-            deck.add(new Card(String.valueOf('\u26DE'), Colors.YELLOW, Actions.SKIP));
+//            deck.add(new Card(String.valueOf('\u20E0'), Colors.BLUE, Actions.SKIP));
+//            deck.add(new Card(String.valueOf('\u20E0'), Colors.RED, Actions.SKIP));
+//            deck.add(new Card(String.valueOf('\u20E0'), Colors.GREEN, Actions.SKIP));
+//            deck.add(new Card(String.valueOf('\u20E0'), Colors.YELLOW, Actions.SKIP));
+            deck.add(new Card("S", Colors.BLUE, Actions.SKIP));
+            deck.add(new Card("S", Colors.RED, Actions.SKIP));
+            deck.add(new Card("S", Colors.GREEN, Actions.SKIP));
+            deck.add(new Card("S", Colors.YELLOW, Actions.SKIP));
         }
 
 

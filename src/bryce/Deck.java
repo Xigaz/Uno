@@ -1,13 +1,16 @@
 package bryce;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Deck
 {
-    ArrayList<Card> deck = new ArrayList<>();
+    private ArrayList<Card> deck = new ArrayList<>();
+    private DiscardPile pile;
 
-    public Deck()
+    public Deck(DiscardPile dp)
     {
+        pile = dp;
         //Create Cards for all 76 colored numbers
         for(int i = 1; i < 9; i++)
         {
@@ -63,11 +66,24 @@ public class Deck
         {
             deck.add(new Card("+4", Colors.WILD, Actions.WILD4));
         }
-
-
-
+        for(int i = 0; i < 7; i++)
+            Collections.shuffle(deck);
     }
 
+    public Card draw()
+    {
+        if(deck.size() == 0)
+            reshuffle();
+
+        return deck.remove(0);
+    }
+
+    private void reshuffle()
+    {
+        deck = pile.reshuffle();
+        for(int i = 0; i < 7; i++)
+            Collections.shuffle(deck);
+    }
 
 
 }

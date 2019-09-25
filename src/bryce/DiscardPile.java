@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class DiscardPile
 {
-    ArrayList<Card> pile = new ArrayList<>();
-    Card currentCard;
+    private ArrayList<Card> pile = new ArrayList<>();
+    private Card currentCard;
 
     public void discardCard(Card d)
     {

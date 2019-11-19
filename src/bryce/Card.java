@@ -32,4 +32,25 @@ public class Card
     {
         return c.action == Actions.WILD || c.action == Actions.WILD4 || c.color == color || c.displayValue.equals(displayValue);
     }
+
+    @Override
+    public String toString()
+    {
+        StringBuilder textCard = new StringBuilder();
+        String printColor = color.getPrintColor();
+
+        textCard.append(printColor);
+        textCard.append("╔════╗\n");
+
+        textCard.append(printColor);
+        textCard.append("║ ").append(String.format("%2s", displayValue)).append(" ║\n");
+
+        textCard.append(printColor);
+        textCard.append("║    ║\n");
+
+        textCard.append(printColor);
+        textCard.append("╚════╝");
+
+        return textCard.toString();
+    }
 }

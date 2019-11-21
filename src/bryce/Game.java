@@ -1,7 +1,6 @@
 package bryce;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class Game
 {
@@ -17,15 +16,23 @@ public class Game
         players.add(new Player("Sam"));
         players.add(new Player("Merry"));
         players.add(new Player("Pippin"));
+
+        for(int i = 0; i < 12; i++)
+            for(Player pl : players)
+                pl.addCard(myDeck.draw());
+
+        dp.discardCard(myDeck.draw());
     }
 
     public void play()
     {
-        for(int i = 0; i < 20; i++)
-            players.get(0).addCard(myDeck.draw());
-        dp.discardCard(myDeck.draw());
-        System.out.println(players.get(0));
-        System.out.println(dp);
+        for(Player currentPlayer : players)
+        {
+            System.out.println(currentPlayer);
+
+        }
+        
+        
 
     }
 

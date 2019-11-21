@@ -13,6 +13,11 @@ public class Player
         name = n;
     }
 
+    public String getName()
+    {
+        return name;
+    }
+
     public void addCard(Card c)
     {
         hand.add(c);
@@ -34,6 +39,22 @@ public class Player
             midTop.append(cs[1]);
             midBot.append(cs[2]);
             bot.append(cs[3]);
+
+            if(hand.size() >= 10 && hand.get(9).equals(c))
+            {
+                
+                bot.append("\n");
+                textHand.append(top
+                    .append("\n")
+                    .append(midTop.append("\n"))
+                    .append(midBot.append("\n"))
+                    .append(bot.append("\n"))
+                );
+                top = new StringBuilder();
+                midTop = new StringBuilder();
+                midBot = new StringBuilder();
+                bot = new StringBuilder();
+            }    
         }
         textHand.append(top
                 .append("\n")

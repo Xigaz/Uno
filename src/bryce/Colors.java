@@ -1,6 +1,5 @@
 package bryce;
 
-import java.awt.*;
 
 public enum Colors {
     RED("Red"),

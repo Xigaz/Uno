@@ -12,7 +12,7 @@ public class Deck
     {
         pile = dp;
         //Create Cards for all 76 colored numbers
-        for(int i = 1; i < 9; i++)
+        for(int i = 1; i <= 9; i++)
         {
             for(int j = 0; j < 2; j++)
             {

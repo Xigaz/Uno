@@ -32,15 +32,24 @@ public class Player
                 midBot = new StringBuilder(),
                 bot = new StringBuilder();
 
-        for(Card c : hand)
+        for(int i = 1; i <= hand.size() && i <= 10; i++)
+            textHand.append(String.format("  %2d  ", i));
+        textHand.append("\n");
+        // for(int i = 1; i <= hand.size() && i <= 10; i++)
+        //     textHand.append(String.format("----", i));
+        // textHand.append("\n");
+        for(int i = 1; i <= hand.size(); i++)
         {
+
+            Card c = hand.get(i-1);
             String[] cs = c.toString().split("\n");
             top.append(cs[0]);
             midTop.append(cs[1]);
             midBot.append(cs[2]);
             bot.append(cs[3]);
 
-            if(hand.size() >= 10 && hand.get(9).equals(c))
+
+            if(i % 10 == 0 && i != 0)
             {
                 
                 bot.append("\n");
@@ -54,6 +63,13 @@ public class Player
                 midTop = new StringBuilder();
                 midBot = new StringBuilder();
                 bot = new StringBuilder();
+                
+                for(int j = 1 + i; j <= hand.size() && j % 10 < 10; j++)
+                    textHand.append(String.format("  %2d  ", j));
+                textHand.append("\n");
+                // for(int j = 1 + i; j <= hand.size() && j % 10 < 10; j++)
+                //     textHand.append(String.format("------", j));
+                // textHand.append("\n");
             }    
         }
         textHand.append(top

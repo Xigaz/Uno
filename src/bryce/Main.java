@@ -15,7 +15,7 @@ public class Main
 
         while(playAgain)
         {
-            Player me = new Player(n);
+            Player me = new Player(n, Player.PlayerType.HUMAN);
             Game g = new Game(me);
             g.play();
             System.out.print("\u001B[1;30m");

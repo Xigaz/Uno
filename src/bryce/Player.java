@@ -4,18 +4,24 @@ import java.util.ArrayList;
 
 public class Player
 {
-
+    public enum PlayerType {HUMAN, AI};
     private String name;
     private ArrayList<Card> hand = new ArrayList<>();
+    private PlayerType type;
 
-    public Player(String n)
+    public Player(String n, PlayerType pt)
     {
         name = n;
+        type = pt;
     }
 
     public String getName()
     {
         return name;
+    }
+    public PlayerType getType()
+    {
+        return type;
     }
 
     public void addCard(Card c)
@@ -23,6 +29,10 @@ public class Player
         hand.add(c);
     }
 
+    public boolean hasWon()
+    {
+        return hand.size() == 0;
+    }
     public String toString()
     {
         StringBuilder

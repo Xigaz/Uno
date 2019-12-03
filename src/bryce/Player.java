@@ -129,7 +129,7 @@ public class Player
 
         textHand.append(Colors.WILD.getPrintColor() + "\n");
 
-        return textHand.toString().stripTrailing();
+        return textHand.toString();
     }
 
 }

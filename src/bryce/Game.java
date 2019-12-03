@@ -49,9 +49,7 @@ public class Game
             System.out.println(Colors.WILD.getPrintColor());
             System.out.println();
             System.out.println(dp.getCurrentCard());
-            System.out.println(Colors.WILD.getPrintColor());
-            int pick = 0;
-            
+                        
             Actions a = dp.getCurrentCard().getAction();
             if (cardDone)
             {
@@ -77,7 +75,9 @@ public class Game
                     {
                         System.out.printf("\n%sWild Color is %s\n", dp.getWildColor().getPrintColor(), dp.getWildColor());
                     }
-                    System.out.println(currentPlayer);
+                    
+                    if(currentPlayer.getType() == PlayerType.HUMAN)
+                        System.out.println(currentPlayer);
                     doPlayerAction(currentPlayer);
                     break;
                 case WILD:
@@ -85,7 +85,9 @@ public class Game
                     {
                         System.out.printf("\n%sWild Color is %s\n", dp.getWildColor().getPrintColor(), dp.getWildColor());
                     }
-                    System.out.println(currentPlayer);
+                    
+                    if(currentPlayer.getType() == PlayerType.HUMAN)
+                        System.out.println(currentPlayer);
                     doPlayerAction(currentPlayer);
                     
                     break;

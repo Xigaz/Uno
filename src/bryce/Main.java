@@ -7,6 +7,7 @@ public class Main
 
     public static void main(String[] args)
     {
+        System.gc();
         Scanner input = new Scanner(System.in);
         System.out.print("\u001B[1;30m");
         System.out.print("Enter your name: ");

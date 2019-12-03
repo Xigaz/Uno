@@ -6,11 +6,29 @@ public class DiscardPile
 {
     private ArrayList<Card> pile = new ArrayList<>();
     private Card currentCard;
+    private Colors wildColor = Colors.WILD;
 
-    public void discardCard(Card d)
+    public boolean discardCard(Card d)
     {
-        pile.add(d);
-        currentCard = d;
+        if(currentCard == null || currentCard.canPlay(d, wildColor))
+        {
+            pile.add(d);
+            currentCard = d;
+            wildColor = Colors.WILD;
+            return true;
+        }
+        else
+            return false;
+    }
+
+    public void setWildColor(Colors c)
+    {
+        wildColor = c;
+    }
+
+    public Colors getWildColor()
+    {
+        return wildColor;
     }
 
     public ArrayList<Card> reshuffle()

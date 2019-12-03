@@ -89,5 +89,9 @@ public class Deck
             Collections.shuffle(deck);
     }
 
+    public void putCardBack(Card c)
+    {
+        deck.add(c);
+    }
 
 }

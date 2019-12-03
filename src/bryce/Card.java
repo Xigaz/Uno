@@ -30,7 +30,13 @@ public class Card
 
     public boolean canPlay(Card c)
     {
-        return c.action == Actions.WILD || c.action == Actions.WILD4 || c.color == color || c.displayValue.equals(displayValue);
+        return canPlay(c, Colors.WILD);
+    }
+
+    public boolean canPlay(Card c, Colors co)
+    {
+        return c.action == Actions.WILD || c.action == Actions.WILD4 || c.color == color || c.displayValue.equals(displayValue) 
+            || (action == Actions.WILD && c.color == co ) || (action == Actions.WILD4 && c.color == co );
     }
 
     @Override

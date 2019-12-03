@@ -26,13 +26,50 @@ public class Player
 
     public void addCard(Card c)
     {
-        hand.add(c);
+        hand.add(0,c);
     }
 
     public boolean hasWon()
     {
         return hand.size() == 0;
     }
+
+    public boolean hasUno()
+    {
+        return hand.size() == 1;
+    }
+
+    public Colors getMostColor()
+    {
+        int[] count = new int[Colors.values().length];
+        for(Card c : hand)
+        {
+            count[c.getColor().ordinal()]++;
+        }
+        count[Colors.WILD.ordinal()] = 0;
+        int max = 0;
+        Colors c = null;
+        for(int i = 0; i < count.length;i++)
+        {
+            if (count[i] > max)
+            {
+                max = count[i];
+                c = Colors.values()[i];
+            }
+        }
+        return c;
+    }
+
+    public Card playCard(int a)
+    {
+        return hand.remove(a);
+    }
+
+    public int getHandSize()
+    {
+        return hand.size();
+    }
+
     public String toString()
     {
         StringBuilder
@@ -42,6 +79,7 @@ public class Player
                 midBot = new StringBuilder(),
                 bot = new StringBuilder();
 
+        textHand.append(Colors.WILD.getPrintColor());
         for(int i = 1; i <= hand.size() && i <= 10; i++)
             textHand.append(String.format("  %2d  ", i));
         textHand.append("\n");
@@ -67,7 +105,7 @@ public class Player
                     .append("\n")
                     .append(midTop.append("\n"))
                     .append(midBot.append("\n"))
-                    .append(bot.append("\n"))
+                    .append(bot.append(Colors.WILD.getPrintColor()+"\n"))
                 );
                 top = new StringBuilder();
                 midTop = new StringBuilder();
@@ -89,9 +127,9 @@ public class Player
                 .append(bot.append("\n"))
         );
 
-        textHand.append("\n");
+        textHand.append(Colors.WILD.getPrintColor() + "\n");
 
-        return textHand.toString();
+        return textHand.toString().stripTrailing();
     }
 
 }

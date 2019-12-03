@@ -9,6 +9,7 @@ public enum Colors {
     WILD("Black");
 
     private final String printColor;
+    private final String displayColor;
 
     private Colors(String c)
     {
@@ -17,6 +18,7 @@ public enum Colors {
         String ANSI_RED = "\u001B[1;31m";
         String ANSI_GREEN = "\u001B[1;32m";
         String ANSI_YELLOW = "\u001B[1;33m";
+        displayColor = c;
 
         switch (c)
         {
@@ -41,6 +43,10 @@ public enum Colors {
     public String getPrintColor()
     {
         return printColor;
+    }
+    public String toString()
+    {
+        return displayColor;
     }
 
 };

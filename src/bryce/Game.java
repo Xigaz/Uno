@@ -42,8 +42,11 @@ public class Game
 
         for(int i = 0; !currentPlayer.hasWon(); )
         {
+
             currentPlayer = players.get(i);
             playedWild = false;
+            // if(currentPlayer.getType() == PlayerType.HUMAN)
+            //     System.out.println("\033[H\033[2J");
             System.out.println(Colors.WILD.getPrintColor());
             System.out.printf("%s it's your turn:", currentPlayer.getName());
             System.out.println(Colors.WILD.getPrintColor());

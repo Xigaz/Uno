@@ -4,12 +4,6 @@
             "type": "java",
             "name": "CodeLens (Launch) - Main",
             "request": "launch",
-            "mainClass": "bryce.Main"
-        },
-        {
-            "type": "java",
-            "name": "CodeLens (Launch) - Main",
-            "request": "launch",
             "mainClass": "bryce.Main",
             "projectName": "Uno_86e75917",
             "vmArgs": "-Xmx4096m"
